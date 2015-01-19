@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>CityScape: SERVERS</title>
+    <link rel="stylesheet" type="text/css" href="http://hasharahha.github.io/cityscape/style/main.css" />
+    <style>
+      #type-here{
+        position:fixed;
+        right:0; bottom:0;
+        width:240px;
+        height:50px;
+      }
+      
+      #text-box{
+        width:100%;
+        height:100%;
+        background:#888;
+        line-height:50px;
+        padding-left:20px;
+        padding-right:20px;
+        font-size:11pt;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="game"><
+    <canvas id="world" style="">
+      Sorry world can't load
+    </canvas>
+    <!--
+    <div id="chat">
+      <div class="something-said"><span style="color:orange">samuel2013:</span> hello hello hello! ;)</div>
+      <div class="something-said"><span style="color:blue">HASHARAHHA14:</span> Hi there</div>
+      <div class="something-said"><span style="color:blue">HASHARAHHA14:</span> And still coding :)</div>
+      <div class="something-said"><span style="color: blue">HASHARAHHA14:</span> I just added this today, at 11:40, if yu arent on private browsing the map will save, just a note :)</div>
+    </div>
+    -->
+    <object id="chat" data="http://jbcompanyrules.comyr.com/cityscape/chat.html"></object>
+    <div id="type-here">
+      <form action="http://jbcompanyrules.comyr.com/cityscape/chat.php" method="post">
+      <input type="text" name="comment" id="text-box" placeholder="type and press enter"/>
+      <textarea name="name" id="comment-name" style="display:none"></textarea>
+      </form>
+    </div>
+    <div id="inventory">
+      <div class="inventory-tile" style="background-position:0px 0px" onclick="select(0)"></div>
+      <div class="inventory-tile" style="background-position:50px 0px" onclick="select(1)"></div>
+      <div class="inventory-tile" style="background-position: -100px 50px" onclick="select(4)"></div>
+      <div class="inventory-tile" style="background-position:0px 50px" onclick="select(5)"></div>
+      <div class="inventory-tile" style="background-position:-50px 50px" onclick="select(6)"></div>
+    </div>
+    <div id="currency-box">
+      <div class="coin"></div>
+      <div id="currency">$5</div>
+    </div>
+    <div id="center-popup" style="display: none;">
+    <div id="welcome">Welcome</div>
+    <div id="msg" style="height:50px;text-align:center;">You have logged in.</div>
+    <button onclick="closePopUp()">Close Message</button>
+    </div>
+    </div>
+    <script type="text/javascript" src="https://dl.dropboxusercontent.com/s/f9h6282df24p70t/dojo.js"></script>
+    <script type="text/javascript" src="server-side/load.js"></script>
+    <script type="text/javascript" src="c/chat.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/checkauth.js"></script>
+    <script>
+    document.getElementById("welcome").innerHTML='welcome, '+user;
+    document.getElementById("world").style.opacity="0.5";
+    document.getElementById("comment-name").innerHTML =user;
+    document.getElementById("center-popup").style.display ="none";
+      function closePopUp(){
+        document.getElementById("center-popup").style.display="none";
+        document.getElementById("world").style.opacity="1";
+
+      }
+    </script>
+  </body>
+</html>
